@@ -3,6 +3,7 @@ ARG BUILD_FROM=ubuntu:22.04
 # Using multi-stage as if/else conditions
 # https://stackoverflow.com/questions/43654656/dockerfile-if-else-condition-with-external-arguments/60820156#60820156
 FROM $BUILD_FROM as base
+ARG TARGETARCH
 RUN echo "Targetarch: $TARGETARCH"
 COPY binaries/ /binaries
 COPY run.sh /
