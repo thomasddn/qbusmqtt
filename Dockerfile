@@ -3,8 +3,6 @@ ARG BUILD_FROM=ubuntu:22.04
 # Using multi-stage as if/else conditions
 # https://stackoverflow.com/questions/43654656/dockerfile-if-else-condition-with-external-arguments/60820156#60820156
 FROM $BUILD_FROM as base
-ARG TARGETARCH
-RUN echo "Targetarch: $TARGETARCH"
 COPY binaries/ /binaries
 COPY run.sh /
 RUN apt-get clean && \
@@ -14,7 +12,7 @@ RUN apt-get clean && \
     apt-get install tftp git unzip arp-scan net-tools -y
 
 # ARM
-FROM base as armv7
+FROM base as arm32v7
 RUN cd /binaries/qbusMqttGw \
     && tar -xf qbusMqttGw-arm.tar
 
