@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+tftp $1 << fin
+   binary
+   put $2 $3
+   quit
+fin
+echo 
+

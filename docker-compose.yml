@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  qbusmqtt:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: qbusmqtt:latest
+    container_name: qbusmqtt
+    restart: unless-stopped
+    network_mode: host # Must be host so it can discover the controller
+    environment:
+      TZ: Europe/Brussels
+    env_file: .env
