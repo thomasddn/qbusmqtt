@@ -1,4 +1,3 @@
-ARG TARGETARCH
 ARG BUILD_FROM=ubuntu:22.04
 
 # Using multi-stage as if/else conditions

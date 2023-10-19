@@ -25,6 +25,7 @@ services:
     image: thomasddn/qbusmqtt:latest
     container_name: qbusmqtt
     restart: unless-stopped
+    network_mode: host          # Must be host so it can discover the controller
     environment:
       MQTT_HOST: 192.168.0.123
       MQTT_PORT: 1883
