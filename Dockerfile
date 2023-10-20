@@ -1,29 +1,18 @@
-ARG BUILD_FROM=ubuntu:22.04
+FROM ubuntu:22.04
+ARG TARGETARCH
 
-# Using multi-stage as if/else conditions
-# https://stackoverflow.com/questions/43654656/dockerfile-if-else-condition-with-external-arguments/60820156#60820156
-FROM $BUILD_FROM as base
 COPY binaries/ /binaries
+
 COPY run.sh /
+
 RUN apt-get clean && \
     apt-get update && \
     apt-get upgrade -y && \
     apt-get install libc6 libdbus-1-3 libstdc++6 -y && \
-    apt-get install tftp git unzip arp-scan net-tools -y
-
-# ARM
-FROM base as arm32v7
-RUN cd /binaries/qbusMqttGw \
-    && tar -xf qbusMqttGw-arm.tar
-
-# X64
-FROM base as amd64
-RUN cd /binaries/qbusMqttGw \
-    && tar -xf qbusMqttGw-x64.tar
-
-# FINAL
-FROM $TARGETARCH AS final
-RUN cd / && \
+    apt-get install tftp git unzip arp-scan net-tools -y && \
+    cd /binaries/qbusMqttGw && \
+    tar -xf qbusMqttGw-${TARGETARCH:-amd64}.tar && \
+    cd / && \
     mkdir /usr/bin/qbus && \
     mkdir /opt/qbus && \
     cp -R /binaries/fw/ /opt/qbus/ && \

@@ -2,7 +2,7 @@ name: Publish Docker image
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "docker" ]
   pull_request:
     branches: [ "main" ]
   # workflow_dispatch:
@@ -19,8 +19,8 @@ jobs:
       - name: Docker Setup QEMU
         # uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
         uses: docker/setup-qemu-action@v3.0.0
-        #with:
-        #  platforms: amd64,arm32v7
+        with:
+         platforms: linux/arm/v7,linux/amd64
 
       - name: Docker Setup Buildx
         # uses: docker/setup-buildx-action@f95db51fddba0c2d1ec667646a06c2ce06100226
@@ -46,7 +46,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          platforms: linux/amd64,linux/arm32v7
+          platforms: linux/arm/v7,linux/amd64
           labels: ${{ steps.meta.outputs.labels }}
           tags: ${{ steps.meta.outputs.tags }}
           push: true
