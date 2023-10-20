@@ -2,10 +2,9 @@ name: Publish Docker image
 
 on:
   push:
-    branches: [ "main", "docker" ]
-  pull_request:
-    branches: [ "main" ]
-  # workflow_dispatch:
+    tags:
+      - v*
+  workflow_dispatch:
 
 jobs:
 
