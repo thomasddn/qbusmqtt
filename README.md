@@ -1,6 +1,6 @@
 # QBUSMQTT
 
-Docker version for the Qbus MQTT part of https://github.com/QbusKoen/qbusMqtt.
+Exposes states and events of the Qbus Home Automation system to a MQTT broker. This is the docker version for the Qbus MQTT part of https://github.com/QbusKoen/qbusMqtt.
 
 [![GitHub release (with filter)][releases-shield]][releases]
 ![Supports amd64 Architecture][amd64-shield]
