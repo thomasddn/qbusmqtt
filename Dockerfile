@@ -8,7 +8,7 @@ RUN apt-get clean && \
     apt-get update && \
     apt-get upgrade -y && \
     apt-get install libc6 libdbus-1-3 libstdc++6 -y && \
-    apt-get install tftp git unzip arp-scan net-tools -y && \
+    apt-get install tftp git unzip arp-scan net-tools telnet -y && \
     cd /binaries/qbusMqttGw && \
     tar -xf qbusMqttGw-${TARGETARCH:-amd64}.tar && \
     cd / && \

@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
+# Set default env variables
+: "${MQTT_PORT:=1883}"
+
 # echo $MQTT_HOST
 # echo $MQTT_PORT
 # echo $MQTT_USER
 # echo $MQTT_PWD
-
-# Set default env variables
-: "${MQTT_PORT:=1883}"
 
 # Start gateway
 echo "Starting Qbus MQTT gateway."
