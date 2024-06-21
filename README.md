@@ -11,6 +11,11 @@ It is also available as a Home Assistant add-on: https://github.com/thomasddn/ho
 ![Supports arm64 Architecture][arm64-shield]
 ![Supports i386 Architecture][i386-shield]
 
+## ❤️ Support this project
+
+If you enjoy this project, consider supporting its development by making a donation. Even a small contribution makes a big difference. Thank you for your support!
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N7UZ6KN)
 
 ## Setup
 
