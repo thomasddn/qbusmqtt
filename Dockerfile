@@ -13,10 +13,10 @@ COPY binaries/ /binaries
 COPY run.sh /
 
 RUN case "${TARGETARCH:-amd64}" in \
-        armv7|armhf) ARCH_MAP="arm" ;; \
-        aarch64) ARCH_MAP="arm64" ;; \
+        arm) ARCH_MAP="arm" ;; \
+        arm64) ARCH_MAP="arm64" ;; \
         amd64) ARCH_MAP="x64" ;; \
-        i386) ARCH_MAP="x86" ;; \
+        386) ARCH_MAP="x86" ;; \
         *) echo "Unsupported architecture: ${TARGETARCH}" && exit 1 ;; \
     esac && \
     mkdir -p /opt/ubielite && \
