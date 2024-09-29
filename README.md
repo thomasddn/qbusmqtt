@@ -11,13 +11,13 @@ It is also available as a Home Assistant add-on: https://github.com/thomasddn/ho
 ![Supports arm64 Architecture][arm64-shield]
 ![Supports i386 Architecture][i386-shield]
 
-## ❤️ Support this project
+## 🥤 Snack-fueled coding 
 
-If you enjoy this project, consider supporting its development by making a donation. Even a small contribution makes a big difference. Thank you for your support!
+You know what goes great with open-source coding? Snacks! If my project helped you out, maybe throw a little something my way so my potato chips and Coca-Cola stash doesn't run out!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N7UZ6KN)
 
-## Setup
+## 🛠️ Setup
 
 ### Prerequisites
 - Qbus home automation system (hardware)
@@ -55,7 +55,7 @@ services:
 | MQTT_USER | N | \<empty> | The username to connect to the MQTT broker. |
 | MQTT_PWD | N | \<empty> | The password to connect to the MQTT broker. |
 
-## Remarks
+## 🗣️ Remarks
 :warning: This is **not** officially supported by Qbus.
 
 
