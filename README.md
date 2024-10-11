@@ -8,7 +8,6 @@ It is also available as a Home Assistant add-on: https://github.com/thomasddn/ho
 
 ![Supports amd64 Architecture][amd64-shield]
 ![Supports arm Architecture][arm-shield]
-![Supports arm64 Architecture][arm64-shield]
 ![Supports i386 Architecture][i386-shield]
 
 ## 🥤 Snack-fueled coding 
@@ -63,6 +62,5 @@ services:
 [releases-shield]: https://img.shields.io/github/v/release/thomasddn/qbusmqtt?style=flat-square
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg?style=flat-square
 [arm-shield]: https://img.shields.io/badge/arm-yes-green.svg?style=flat-square
-[arm64-shield]: https://img.shields.io/badge/arm64-yes-green.svg?style=flat-square
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg?style=flat-square
 [releases]: https://github.com/thomasddn/qbusmqtt/releases

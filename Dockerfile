@@ -14,19 +14,18 @@ COPY run.sh /
 
 RUN case "${TARGETARCH:-amd64}" in \
         arm) ARCH_MAP="arm" ;; \
-        arm64) ARCH_MAP="arm64" ;; \
         amd64) ARCH_MAP="x64" ;; \
         386) ARCH_MAP="x86" ;; \
         *) echo "Unsupported architecture: ${TARGETARCH}" && exit 1 ;; \
     esac && \
-    mkdir -p /opt/ubielite && \
-    mkdir -p /var/log/ubielite && \
-    chmod a+r /var/log/ubielite && \
-    cp /binaries/UbieLite-${ARCH_MAP}/UbieLite /opt/ubielite/ && \
-    cp -R /binaries/fw/ /opt/ubielite/ && \
-    cp /binaries/puttftp /opt/ubielite/ && \
-    chmod +x /opt/ubielite/UbieLite && \
-    chmod +x /opt/ubielite/puttftp && \
+    mkdir -p /opt/qbusmqttgw && \
+    mkdir -p /var/log/qbusmqttgw && \
+    chmod a+r /var/log/qbusmqttgw && \
+    cp /binaries/gateway-${ARCH_MAP}/qbusMqttGw /opt/qbusmqttgw/ && \
+    cp -R /binaries/fw/ /opt/qbusmqttgw/ && \
+    cp /binaries/puttftp /opt/qbusmqttgw/ && \
+    chmod +x /opt/qbusmqttgw/qbusMqttGw && \
+    chmod +x /opt/qbusmqttgw/puttftp && \
     chmod a+x /run.sh && \
     rm -rf /binaries
 
