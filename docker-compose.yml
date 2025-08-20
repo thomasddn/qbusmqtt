@@ -1,12 +1,14 @@
 services:
-  qbusmqtt:
+  qbusmqtt-dev:
     build:
       context: .
       dockerfile: ./Dockerfile
-    image: qbusmqtt:latest
-    container_name: qbusmqtt
+    image: qbusmqtt-dev:latest
+    container_name: qbusmqtt-dev
     restart: unless-stopped
     network_mode: host # Must be host so it can discover the controller
+    volumes:
+      - './data:/opt/qbusmqttgw/data'
     environment:
       TZ: Europe/Brussels
     env_file: .env

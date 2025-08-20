@@ -8,13 +8,15 @@ It is also available as a Home Assistant add-on: https://github.com/thomasddn/ho
 
 ![Supports amd64 Architecture][amd64-shield]
 ![Supports arm Architecture][arm-shield]
+![Supports arm64 Architecture][arm64-shield]
 ![Supports i386 Architecture][i386-shield]
 
 ## 🥤 Snack-fueled coding 
 
 You know what goes great with open-source coding? Snacks! If my project helped you out, maybe throw a little something my way so my potato chips and Coca-Cola stash doesn't run out!
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N7UZ6KN)
+[![ko-fi sponsor][kofi-sponsor-shield]][kofi-sponsor]
+[![github sponsor][github-sponsor-shield]][github-sponsor]
 
 ## 🛠️ Setup
 
@@ -37,6 +39,8 @@ services:
     container_name: qbusmqtt
     restart: unless-stopped
     network_mode: host          # Must be host so it can discover the controller
+    volumes:
+      - './data:/opt/qbusmqttgw/data'
     environment:
       MQTT_HOST: 192.168.0.123
       MQTT_PORT: 1883
@@ -62,5 +66,10 @@ services:
 [releases-shield]: https://img.shields.io/github/v/release/thomasddn/qbusmqtt?style=flat-square
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg?style=flat-square
 [arm-shield]: https://img.shields.io/badge/arm-yes-green.svg?style=flat-square
+[arm64-shield]: https://img.shields.io/badge/arm64-yes-green.svg?style=flat-square
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg?style=flat-square
 [releases]: https://github.com/thomasddn/qbusmqtt/releases
+[kofi-sponsor-shield]: https://img.shields.io/badge/Support_me_on_Ko--fi-%E2%9D%A4-fe8e86?style=for-the-badge&logo=kofi&logoColor=ffffff
+[kofi-sponsor]: https://ko-fi.com/N4N7UZ6KN
+[github-sponsor-shield]: https://img.shields.io/badge/Support_me_on_GitHub-%E2%9D%A4-fe8e86?style=for-the-badge&logo=github&color=fe8e86
+[github-sponsor]: https://github.com/sponsors/thomasddn
