@@ -1,8 +1,8 @@
 # QBUSMQTT
 
-Exposes states and events of the Qbus Home Automation system to a MQTT broker.
+Exposes states and events of the Qbus Home Automation system to an MQTT broker, and allows you to control it through MQTT. The API at https://github.com/Qbus-iot/qbusmqttapi is an ideal match for this.
 
-It is also available as a Home Assistant add-on: https://github.com/thomasddn/home-assistant-addons.
+QBUSMQTT is also available as a Home Assistant app: https://github.com/thomasddn/home-assistant-addons.
 
 [![GitHub release (with filter)][releases-shield]][releases]
 
@@ -21,8 +21,12 @@ You know what goes great with open-source coding? Snacks! If my project helped y
 ## 🛠️ Setup
 
 ### Prerequisites
+
 - Qbus home automation system (hardware)
 - MQTT broker (e.g. https://hub.docker.com/_/eclipse-mosquitto)
+
+> [!IMPORTANT]  
+> QBUSMQTT and the controller(s) must be in the same subnet.
 
 ### Installation
 
@@ -57,6 +61,21 @@ services:
 | MQTT_PORT | N | 1883 | The port of the MQTT broker. |
 | MQTT_USER | N | \<empty> | The username to connect to the MQTT broker. |
 | MQTT_PWD | N | \<empty> | The password to connect to the MQTT broker. |
+
+## Home Assistant
+
+QBUSMQTT is commonly used as the bridge between a Qbus controller and Home Assistant through MQTT.
+In this setup, the gateway publishes Qbus states and events to MQTT topics and listens for MQTT commands, so Home Assistant can both monitor and control your Qbus installation using its MQTT and Qbus integrations.
+
+Data flow is bidirectional end-to-end:
+
+- Qbus events and state changes flow from the controller to the gateway, then to the MQTT broker, and finally to Home Assistant.
+- Commands from Home Assistant flow back through MQTT to the gateway, which forwards them to the Qbus Controller.
+
+> [!NOTE]  
+> If you are running Home Assistant OS (HAOS), use the [Home Assistant app](https://github.com/thomasddn/home-assistant-addons) instead.
+
+![ha-docker-architecture](docs/architecture-docker.drawio.svg)
 
 ## 🗣️ Remarks
 :warning: This is **not** officially supported by Qbus.

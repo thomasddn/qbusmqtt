@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.0] - 2026-04-14
+
+### Changed
+
+- Use new Qbus binaries which expose more outputs and now also support arm64
+- Upgrade to Debian trixie
+
+
 ## [0.4.0] - 2024-10-11
 
 ### Changed
@@ -34,7 +42,8 @@
 
 
 
-[Unreleased]: https://github.com/thomasddn/qbusmqtt/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/thomasddn/qbusmqtt/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/thomasddn/qbusmqtt/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/thomasddn/qbusmqtt/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/thomasddn/qbusmqtt/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/thomasddn/qbusmqtt/compare/v0.1.0...v0.2.0
