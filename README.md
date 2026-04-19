@@ -62,7 +62,7 @@ services:
 | MQTT_USER | N | \<empty> | The username to connect to the MQTT broker. |
 | MQTT_PWD | N | \<empty> | The password to connect to the MQTT broker. |
 
-## Home Assistant
+## 🏠 Home Assistant
 
 QBUSMQTT is commonly used as the bridge between a Qbus controller and Home Assistant through MQTT.
 In this setup, the gateway publishes Qbus states and events to MQTT topics and listens for MQTT commands, so Home Assistant can both monitor and control your Qbus installation using its MQTT and Qbus integrations.
@@ -75,7 +75,7 @@ Data flow is bidirectional end-to-end:
 > [!NOTE]  
 > If you are running Home Assistant OS (HAOS), use the [Home Assistant app](https://github.com/thomasddn/home-assistant-addons) instead.
 
-![ha-docker-architecture](docs/architecture-docker.drawio.svg)
+![ha-docker-architecture](https://github.com/thomasddn/qbusmqtt/raw/main/docs/architecture-docker.drawio.svg)
 
 ## 🗣️ Remarks
 :warning: This is **not** officially supported by Qbus.
