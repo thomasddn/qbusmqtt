@@ -23,7 +23,7 @@ RUN case "${TARGETARCH:-amd64}" in \
     mkdir -p ${QBUS_DIR}/data && \
     mkdir -p /var/log/qbusmqttgw && \
     chmod a+r /var/log/qbusmqttgw && \
-    cp /binaries/gateway-${ARCH_MAP}/qbusMqttGw ${QBUS_DIR}/ && \
+    cp /binaries/bin-${ARCH_MAP}/qbusMqttGw ${QBUS_DIR}/ && \
     cp -R /binaries/fw/ ${QBUS_DIR}/ && \
     cp /binaries/puttftp ${QBUS_DIR}/ && \
     chmod +x ${QBUS_DIR}/qbusMqttGw && \
